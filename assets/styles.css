@@ -362,29 +362,7 @@ section {
   margin-bottom: 2rem;
 }
 
-form input, 
-form textarea {
-  width: 100%;
-  padding: 20px;
-  outline: none;
-  border: none;
-  background: #0b0b13;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  border-radius: 5px;
-}
-
-form input::placeholder, 
-form textarea::placeholder {
-  color: var(--2nd-main-color);
-}
-
-textarea {
-  height: 200px;
-  resize: none;
-}
-
-form .send-btn {
+.contact-btn {
   background: var(--main-color);
   color: var(--text-color);
   box-shadow: 4px 4px var(--text-color);
@@ -396,13 +374,8 @@ form .send-btn {
   font-weight: 400;
   letter-spacing: 2px;
   transition: ease all 0.35s;
-  margin-top: 5px;
-}
-
-form .send-btn:hover {
-  background: var(--text-color);
-  color: var(--main-color);
-  box-shadow: 4px 4px var(--main-color);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Footer */
