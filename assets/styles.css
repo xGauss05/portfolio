@@ -181,7 +181,7 @@ section {
   margin-right: 20px;
 }
 
-/* Services Section */
+/* Background Section */
 .center {
   text-align: center;
   margin-bottom: 1rem;
@@ -194,7 +194,7 @@ section {
   letter-spacing: 6px;
 }
 
-.service-content {
+.background-content {
   display: list-item;
   grid-template-columns: repeat(auto-fit, minmax(350px, auto));
   grid-gap: 3rem;
@@ -402,18 +402,8 @@ section {
   justify-content: center;
   align-items: center;
   height: 100%;
-}
-
-.contact-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 4.2rem;
-}
-
-.contact-form form {
-  position: relative;
-  width: 550px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 form input, 
@@ -553,10 +543,8 @@ form .send-btn:hover {
   .box h5 {
     font-size: 12px;
   }
-  .contact-form form {
-    width: 100%;
-  }
-  .service-content {
+  
+  .background-content {
     grid-template-columns: 1fr;
   }
 
