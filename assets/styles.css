@@ -137,6 +137,57 @@ section {
   box-shadow: 4px 4px var(--main-color);
 }
 
+/* Abilities section styles */
+.abilities {
+  padding: 4rem 2rem;
+}
+
+.center h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.abilities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ability {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.ability h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.level {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.filled {
+  background-color: green;
+}
+
+.empty {
+  background-color: lightgray;
+}
+
 /* Background Section */
 .center {
   text-align: center;
@@ -161,18 +212,19 @@ section {
 .background-img img {
   max-width: 100%;
   height: auto;
+  margin-top: 1rem;
 }
 
 .background-iframe iframe {
   aspect-ratio: 16 / 9;
-  width: 50%
+  width: 50%;
+  margin-top: 1rem;
 }
 
 .row {
   background: #0b0b13;
   padding: 60px 35px;
   border-radius: 5px;
-  cursor: pointer;
   transition: all .40s;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -199,11 +251,7 @@ section {
 
 .row center {
   text-align: center;
-}
-
-.row:hover {
-  transform: translateY(-15px);
-  box-shadow: 0px 15px 30px 0px rgb(0 0 0 / 70%);
+  margin-bottom: 20px;
 }
 
 /* Education Section */
@@ -236,7 +284,6 @@ section {
   background: #0b0b13;
   padding: 40px 30px;
   border-radius: 5px;
-  cursor: pointer;
   transition: all .40s;
 }
 
@@ -267,11 +314,6 @@ section {
   font-size: 14px;
   font-weight: 500;
   color: var(--2nd-main-color);
-}
-
-.box:hover {
-  transform: translate(-15px);
-  box-shadow: 0px 15px 30px 0px rgb(0 0 0 / 70%);
 }
 
 /* Experience Section */
@@ -304,7 +346,6 @@ section {
   background: #0b0b13;
   padding: 40px 30px;
   border-radius: 5px;
-  cursor: pointer;
   transition: all .40s;
 }
 
@@ -337,11 +378,6 @@ section {
   color: var(--2nd-main-color);
 }
 
-.box:hover {
-  transform: translate(-15px);
-  box-shadow: 0px 15px 30px 0px rgb(0 0 0 / 70%);
-}
-
 /* Contact Section */
 .contact {
   text-align: center;
@@ -354,6 +390,15 @@ section {
   height: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.contact-center img {
+  max-width: 150px;
+  max-height: 150px;
+  width: 100%;
+  height: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .contact-btn {
@@ -381,7 +426,6 @@ section {
   line-height: 1.8rem;
   margin-top: 3rem;
 }
-
 
 /* Media query for mobile devices with screen size up to 768px */
 @media (max-width: 768px) {
