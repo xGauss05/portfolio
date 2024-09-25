@@ -137,55 +137,25 @@ section {
   box-shadow: 4px 4px var(--main-color);
 }
 
-/* Abilities section styles */
-.abilities {
-  padding: 4rem 2rem;
-}
+/* Abilities Section */
 
-.center h3 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
 
-.abilities-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.ability {
-  display: flex;
-  justify-content: space-between;
+.abilities-content {
+  display: list-item;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  grid-gap: 3rem;
   align-items: center;
-  font-family: Arial, sans-serif;
+  margin-top: 4.4rem;
 }
 
-.ability h4 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.level {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.filled {
-  background-color: green;
-}
-
-.empty {
-  background-color: lightgray;
+.abilities-img img {
+  max-width: 50px;
+  max-height: 50px;
+  width: 100%;
+  height: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Background Section */
