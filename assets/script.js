@@ -29,41 +29,27 @@ function handleParallax() {
   const scrollY = window.scrollY;
   const homeImg = document.querySelector('.home-img');
   const homeText = document.querySelector('.home-text');
-
-  if (homeImg) {
-    homeImg.style.transform = `translateY(${scrollY * 0.12}px)`;
-  }
-  if (homeText) {
-    homeText.style.transform = `translateY(${scrollY * 0.06}px)`;
-  }
+  if (homeImg) homeImg.style.transform = `translateY(${scrollY * 0.12}px)`;
+  if (homeText) homeText.style.transform = `translateY(${scrollY * 0.06}px)`;
 }
 
 // Intersection Observer – section entrance animations
-const observerOptions = {
-  threshold: 0.12,
-  rootMargin: '0px 0px -60px 0px',
-};
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate-in');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('animate-in');
   });
-}, observerOptions);
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-const targets = document.querySelectorAll(
-  '.section-title, .row, .box, .skills-content, .home-text, .home-img, .contact-center, .contact-btn'
-);
-targets.forEach((el) => {
+document.querySelectorAll(
+  '.row, .box, .skills-content, .home-text, .home-img, .contact-center, .contact-btn'
+).forEach((el) => {
   el.classList.add('animate-ready');
   observer.observe(el);
 });
 
 // Staggered card animations
 document.querySelectorAll('.projects-content, .education-content, .experience-content').forEach((container) => {
-  const cards = container.querySelectorAll('.row, .box');
-  cards.forEach((card, i) => {
+  container.querySelectorAll('.row, .box').forEach((card, i) => {
     card.style.setProperty('--stagger-delay', `${i * 80}ms`);
   });
 });
@@ -72,17 +58,23 @@ document.querySelectorAll('.projects-content, .education-content, .experience-co
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.navbar a');
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
+new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => link.classList.remove('active-link'));
+      const active = document.querySelector(`.navbar a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active-link');
+    }
+  });
+}, { threshold: 0.4 }).observe !== undefined &&
+sections.forEach((section) =>
+  new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        navLinks.forEach((link) => link.classList.remove('active-link'));
-        const active = document.querySelector(`.navbar a[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active-link');
+        navLinks.forEach((l) => l.classList.remove('active-link'));
+        const a = document.querySelector(`.navbar a[href="#${entry.target.id}"]`);
+        if (a) a.classList.add('active-link');
       }
     });
-  },
-  { threshold: 0.4 }
+  }, { threshold: 0.4 }).observe(section)
 );
-
-sections.forEach((section) => sectionObserver.observe(section));

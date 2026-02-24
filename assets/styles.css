@@ -490,6 +490,25 @@ section {
   }
 }
 
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 12px;
+}
+
+.tag {
+  background: var(--main-color);
+  color: var(--text-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
 /* Header scroll state */
 header.scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
